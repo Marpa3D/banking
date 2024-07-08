@@ -13,7 +13,7 @@ type Customer struct {
 	Zipcode string `json:"zip_code" xml:"zipcode"`
 }
 
-func getCustomers(w http.ResponseWriter, r *http.Request) {
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	customers := []Customer{
 		{"Viacheslav",
 			"Zhukovsky",
@@ -34,7 +34,6 @@ func getCustomers(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(customers)
 	}
 }
-
 func greet(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>Greeting page</h1>")
 }
